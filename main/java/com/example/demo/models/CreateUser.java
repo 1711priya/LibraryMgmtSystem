@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Size;
 
 ;
 
-public class CreateCustomer {
+public class CreateUser {
 
 	@Size(min=3)
 	private String name;
@@ -25,12 +25,12 @@ public class CreateCustomer {
 	
 	private List<String> roles;
 
-	public CreateCustomer() {
+	public CreateUser() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	public CreateCustomer(@Size(min = 3) String name, @Email @NotNull String email,
+	public CreateUser(@Size(min = 3) String name, @Email @NotNull String email,
 			@NotNull @Size(min = 8, max = 15) @Pattern(regexp = "[a-zA-Z0-9@]+") String password, List<String> roles) {
 		super();
 		this.name = name;

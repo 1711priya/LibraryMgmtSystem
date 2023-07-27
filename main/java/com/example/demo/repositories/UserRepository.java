@@ -5,12 +5,12 @@ import java.util.Optional;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.rest.core.annotation.RestResource;
 
-import com.example.demo.models.Customer;
+import com.example.demo.models.User;
 
 
-public interface CustomerRepository extends CrudRepository<Customer, Long>{
+public interface UserRepository extends CrudRepository<User, Long>{
 	
 	@RestResource(exported = false)
-	public Optional<Customer> findByEmail(String email);
+	public Optional<User> findByEmail(String email);
 
 }

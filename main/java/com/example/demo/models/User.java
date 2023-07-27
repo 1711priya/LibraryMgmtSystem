@@ -14,7 +14,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Customer {
+public class User {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -32,11 +32,11 @@ public class Customer {
 	@ElementCollection
 	List<String> roles;
 	
-	public Customer() {
+	public User() {
 		super();
 	}
 
-	public Customer(long id, String name, String email, String password, Instant createdAt, Instant modifiedAt,
+	public User(long id, String name, String email, String password, Instant createdAt, Instant modifiedAt,
 			List<String> roles) {
 		super();
 		this.id = id;

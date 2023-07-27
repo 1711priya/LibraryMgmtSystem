@@ -48,6 +48,13 @@ public class SecurityConfiguration {
 		.authorizeHttpRequests( auth -> {
 			try {
 				auth.requestMatchers(HttpMethod.DELETE, "/users/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.POST,"/users/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.POST,"/books/**").hasRole("ADMIN")
+				
+				.requestMatchers(HttpMethod.PUT,"/books/**").hasRole("ADMIN")
+				.requestMatchers(HttpMethod.DELETE,"/books/**").hasRole("ADMIN")
+			
+				.requestMatchers(HttpMethod.POST,"/users/**").hasRole("USER")
 				.requestMatchers(HttpMethod.PUT, "/users/**").hasRole("USER")
 				.anyRequest().permitAll()
 				.and().httpBasic();
